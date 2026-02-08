@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Dashboard - MachineGuard AI</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>MachineGuard AI</span>
+            </div>
+        </div>
+        
+        <div class="header-center">
+            <div class="machine-selector">
+                <i class="fas fa-cog"></i>
+                <select id="machineSelect">
+                    <option value="machine1">Machine #1 - Primary Motor</option>
+                    <option value="machine2">Machine #2 - Hydraulic Pump</option>
+                    <option value="machine3">Machine #3 - Compressor</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="header-icon" id="notificationBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="header-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <!-- Status Overview -->
+        <div class="dashboard-grid">
+            <!-- Health Score Card -->
+            <div class="glass-card health-card">
+                <h3>Machine Health Score</h3>
+                <div class="health-score-container">
+                    <div class="circular-progress" id="healthProgress">
+                        <svg viewBox="0 0 200 200">
+                            <circle class="progress-bg" cx="100" cy="100" r="85"></circle>
+                            <circle class="progress-bar" cx="100" cy="100" r="85" id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-content">
+                            <div class="progress-value" id="healthValue">--</div>
+                            <div class="progress-label">Health</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="health-details">
+                    <div class="health-detail-item">
+                        <span class="detail-label">Status:</span>
+                        <span class="status-badge" id="statusBadge">
+                            <span class="status-dot"></span>
+                            <span id="statusText">Loading...</span>
+                        </span>
+                    </div>
+                    <div class="health-detail-item">
+                        <span class="detail-label">Predicted Failure:</span>
+                        <span class="detail-value" id="failureTime">-- hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Visualization -->
+            <div class="glass-card visualization-card">
+                <h3>3D Machine View</h3>
+                <div id="machine-canvas"></div>
+                <div class="canvas-controls">
+                    <button class="control-btn" onclick="resetCamera()">
+                        <i class="fas fa-sync-alt"></i> Reset View
+                    </button>
+                </div>
+            </div>
+
+            <!-- Live Metrics -->
+            <div class="glass-card metrics-card">
+                <h3>Live Sensor Data</h3>
+                <div class="metrics-grid">
+                    <div class="metric-box">
+                        <div class="metric-icon temp-icon">
+                            <i class="fas fa-temperature-high"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="tempValue">--</div>
+                            <div class="metric-label">Temperature</div>
+                            <div class="metric-trend" id="tempTrend"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-box">
+                        <div class="metric-icon vibration-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="vibrationValue">--</div>
+                            <div class="metric-label">Vibration</div>
+                            <div class="metric-trend" id="vibrationTrend"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-box">
+                        <div class="metric-icon pressure-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="pressureValue">--</div>
+                            <div class="metric-label">Pressure</div>
+                            <div class="metric-trend" id="pressureTrend"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-box">
+                        <div class="metric-icon rpm-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="rpmValue">--</div>
+                            <div class="metric-label">RPM</div>
+                            <div class="metric-trend" id="rpmTrend"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts Panel -->
+            <div class="glass-card alerts-card">
+                <h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Active Alerts
+                </h3>
+                <div class="alerts-list" id="alertsList">
+                    <div class="alert-empty">
+                        <i class="fas fa-check-circle"></i>
+                        <p>No active alerts</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historical Trends -->
+            <div class="glass-card chart-card">
+                <h3>Historical Trends (Last 50 Readings)</h3>
+                <canvas id="trendChart"></canvas>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="glass-card stats-card">
+                <h3>Today's Summary</h3>
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <i class="fas fa-check-circle stat-icon-success"></i>
+                        <div class="stat-content">
+                            <div class="stat-value">98.5%</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock stat-icon-info"></i>
+                        <div class="stat-content">
+                            <div class="stat-value" id="runtime">0h</div>
+                            <div class="stat-label">Runtime</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-exclamation-triangle stat-icon-warning"></i>
+                        <div class="stat-content">
+                            <div class="stat-value" id="alertCount">0</div>
+                            <div class="stat-label">Total Alerts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
