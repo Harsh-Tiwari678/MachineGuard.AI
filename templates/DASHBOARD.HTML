@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Dashboard - MachineGuard AI</title>
+
+    <!-- Fonts COnnection -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+<!--  dusre AWESOME type font connection-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Main Css File connection-->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/DASHBOARD.CSS">
+</head>
+
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="header-left">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>MachineGuard AI</span>
+            </div>
+        </div>
+        <div class="header-nav" style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="/"
+                style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.3s;">
+                Home
+            </a>
+            <a href="/dashboard"
+                style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; background: rgba(96, 165, 250, 0.2); transition: all 0.3s;">
+                Dashboard
+            </a>
+            <a href="/about"
+                style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.3s;">
+                About
+            </a>
+        </div>
+    
+        <div class="header-center">
+            <div class="machine-selector">
+                <i class="fas fa-cog"></i>
+                <select id="machineSelect">
+                    <option value="machine1">Machine #1 - Primary Motor</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="header-right">
+            <div class="header-icon" id="pathwayStatus" title="Pathway Status">
+                <i class="fas fa-circle-notch fa-spin"></i>
+            </div>
+            <div class="header-icon" id="notificationBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge" id="alertBadge">0</span>
+            </div>
+            <div class="header-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </header>
+   
+    <main class="dashboard-main">
+        <div class="dashboard-grid">
+
+            <div class="glass-card health-card">
+                <h3>Machine Health Score</h3>
+                <div class="health-score-container">
+                    <div class="circular-progress" id="healthProgress">
+                        <svg viewBox="0 0 200 200">
+                            <defs>
+                                <linearGradient id="healthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="progress-bg" cx="100" cy="100" r="85"></circle>
+                            <circle class="progress-bar" cx="100" cy="100" r="85" id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-content">
+                            <div class="progress-value" id="healthValue">--</div>
+                            <div class="progress-label">Health</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="health-details">
+                    <div class="health-detail-item">
+                        <span class="detail-label">Status:</span>
+                        <span class="status-badge" id="statusBadge">
+                            <span class="status-dot"></span>
+                            <span id="statusText">Loading...</span>
+                        </span>
+                    </div>
+                    <div class="health-detail-item">
+                        <span class="detail-label">Risk:</span>
+                        <span class="detail-value" id="riskLevel">--</span>
+                    </div>
+                </div>
+            </div>
+
+       
+            <div class="glass-card visualization-card">
+                <h3>3D Machine View</h3>
+                <div id="machine-canvas"></div>
+                <div class="canvas-controls">
+                    <button class="control-btn" onclick="resetCamera()">
+                        <i class="fas fa-sync-alt"></i> Reset View
+                    </button>
+                </div>
+            </div>
+
+           
+
+            <div class="glass-card metrics-card">
+                <h3>Live Sensor Data</h3>
+                <div class="metrics-grid">
+                    <div class="metric-box">
+                        <div class="metric-icon temp-icon">
+                            <i class="fas fa-temperature-high"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="tempValue">--</div>
+                            <div class="metric-label">Temperature</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-box">
+                        <div class="metric-icon vibration-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="vibrationValue">--</div>
+                            <div class="metric-label">Vibration</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-box">
+                        <div class="metric-icon pressure-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="pressureValue">--</div>
+                            <div class="metric-label">Pressure</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-box">
+                        <div class="metric-icon rpm-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="rpmValue">--</div>
+                            <div class="metric-label">RPM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card alerts-card">
+                <h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Active Alerts
+                </h3>
+                <div class="alerts-list" id="alertsList">
+                    <div class="alert-empty">
+                        <i class="fas fa-check-circle"></i>
+                        <p>No active alerts</p>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="glass-card chart-card">
+                <h3>Failure Risk Trend (Last 10 Readings)</h3>
+                <canvas id="trendChart"></canvas>
+            </div>
+
+ 
+        <div class="glass-card stats-card">
+            <h3><i class="fas fa-chart-bar"></i> System Stats</h3>
+            <div class="stats-list">
+                <div class="stat-item">
+                    <i class="fas fa-database stat-icon-info"></i>
+                    <div class="stat-content">
+                        <div class="stat-value" id="totalRecords">0</div>
+                        <div class="stat-label">Total Records</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-exclamation-triangle stat-icon-warning"></i>
+                    <div class="stat-content">
+                        <div class="stat-value" id="alertCount">0</div>
+                        <div class="stat-label">Total Alerts</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle stat-icon-success"></i>
+                    <div class="stat-content">
+                        <div class="stat-value" id="healthyCount">0</div>
+                        <div class="stat-label">Healthy Readings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RAG Assistant  added taki solution bhi mil ske inko -->
+        <div class="glass-card rag-card" style="grid-column: span 12;">
+            <h3><i class="fas fa-robot"></i> AI Maintenance Assistant (RAG)</h3>
+            <div class="rag-container">
+                <div class="rag-messages" id="ragMessages">
+                    <div class="rag-message assistant">
+                        <strong>🤖 Assistant:</strong><br>
+                        Hi! I'm your AI maintenance helper. Ask me anything about:
+                        <br>• High risk situations
+                        <br>• Temperature management
+                        <br>• Tool wear issues
+                        <br>• Emergency protocols
+                    </div>
+                </div>
+                <div class="rag-input-container">
+                    <input type="text" id="ragInput" placeholder="Ask: 'What to do if machine fails?'" />
+                    <button onclick="askRAG()" class="control-btn">
+                        <i class="fas fa-paper-plane"></i> Ask
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/DASHBOARD.JS"></script>
+    </body>
+</body>
+
+</html>

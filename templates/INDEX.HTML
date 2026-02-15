@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MachineGuard AI - Predictive Maintenance System</title>
+    
+        <!--  Fonts Connection -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!--  dusre AWESOME type font connection-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Css File connection-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>MachineGuard AI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index" class="active">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/dashboard" class="btn-primary">Get Started</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="gradient-text">Predict Machine Failures Before They Happen</h1>
+                <p class="hero-subtitle">Real-time AI-powered monitoring that saves millions in downtime costs</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="80">0</span>
+                        <span class="stat-label">% Downtime Reduced</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">₹10L+</span>
+                        <span class="stat-label">Monthly Savings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-label">Hours Early Warning</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="/dashboard" class="cta-btn">
+                        <span>Open Dashboard</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#how-it-works" class="cta-btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        <span>See How It Works</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-3d">
+                <div id="hero-canvas"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section-dark problem-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">The ₹5000 Crore Problem</h2>
+            <p class="section-subtitle" data-aos="fade-up">Indian manufacturing loses billions annually due to unexpected machine failures</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="problem-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Unexpected Downtime</h3>
+                    <p>Machines fail without warning, halting entire production lines for hours or days</p>
+                    <div class="problem-stat">₹50L+ daily loss per factory</div>
+                </div>
+
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="problem-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Reactive Maintenance</h3>
+                    <p>Traditional maintenance happens after breakdown, not before</p>
+                    <div class="problem-stat">48+ hours repair time</div>
+                </div>
+
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="problem-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>No Real-time Visibility</h3>
+                    <p>Operators can't monitor machine health remotely or in real-time</p>
+                    <div class="problem-stat">Zero predictive insights</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-light solution-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">The MachineGuard Solution</h2>
+            <p class="section-subtitle" data-aos="fade-up">AI-powered predictive maintenance that works 24/7</p>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Predictions</h3>
+                    <p>Machine learning models analyze sensor data to predict failures 6+ hours in advance</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Track temperature, vibration, pressure, and RPM every second from any device</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Instant Alerts</h3>
+                    <p>Get notified immediately when machine health drops below critical thresholds</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Universal Access</h3>
+                    <p>Monitor from phone, tablet, or laptop - works on any modern device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-dark how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">How It Works</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Sensors Collect Data</h3>
+                        <p>IoT sensors continuously monitor temperature, vibration, pressure, humidity, and RPM in real-time</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>AI Analyzes Patterns</h3>
+                        <p>Machine learning models process sensor data to detect anomalies and predict failures</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Dashboard Updates Live</h3>
+                        <p>Health scores, status, and predictions update every second on your dashboard</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Take Preventive Action</h3>
+                        <p>Maintenance teams receive alerts and fix issues before catastrophic failure occurs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-light impact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Real Impact</h2>
+            
+            <div class="impact-grid">
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="impact-number" data-target="80">0</div>
+                    <div class="impact-label">% Downtime Reduction</div>
+                </div>
+
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="impact-number">₹120L</div>
+                    <div class="impact-label">Annual Savings</div>
+                </div>
+
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="impact-number" data-target="95">0</div>
+                    <div class="impact-label">% Prediction Accuracy</div>
+                </div>
+
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="impact-number" data-target="6">0</div>
+                    <div class="impact-label">Hours Early Warning</div>
+                </div>
+            </div>
+
+            <div class="sustainability-badge" data-aos="fade-up">
+                <i class="fas fa-leaf"></i>
+                <div>
+                    <h4>Green Manufacturing</h4>
+                    <p>Reduce waste, energy consumption, and carbon footprint through optimized maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section Rendering here -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Transform Your Operations?</h2>
+            <p data-aos="fade-up">Start monitoring your machines in real-time today</p>
+            <a href="/dashboard" class="cta-btn-large" data-aos="zoom-in">
+                Open Dashboard
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>MachineGuard AI</span>
+                    </div>
+                    <p>Predictive maintenance for the future of manufacturing</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> harshtiwari1806@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 9690365373</li>
+                        <li><i class="fas fa-envelope"></i> goldigond44@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 8948220796</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/harsh-tiwari-515467315" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/Harsh_debugs01" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/Harsh-Tiwari678/MachineGuard.AI" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MachineGuard AI. Built for Hack For Green Bharat</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/THREE-SCENE.js') }}"></script>
+</body>
+</html>
