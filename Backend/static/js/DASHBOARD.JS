@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateDashboard, UPDATE_INTERVAL);
     checkPathwayStatus();
     setInterval(checkPathwayStatus, 30000);
- //load ke baad 1.5 second ke delay se 3D machine animation initialize krna hai taki sab kuch load ho jaye
+    //load ke baad 1.5 second ke delay se 3D machine animation initialize krna hai taki sab kuch load ho jaye
     setTimeout(() => {
         if (typeof THREE !== 'undefined') {
             init3DMachine();
@@ -194,11 +194,11 @@ function updateChart(history) {
 }
 
 function updateStats(history) {
-  
+
     const totalEl = document.getElementById('totalRecords');
     if (totalEl) totalEl.textContent = history.length;
 
-  
+
     const alertCountEl = document.getElementById('alertCount');
     if (alertCountEl) {
         const totalAlerts = history.filter(r => {
@@ -284,10 +284,10 @@ function checkAlerts(history) {
             list.appendChild(div);
         });
 
-       
+
         document.getElementById('alertBadge').textContent = alerts.length;
 
-       
+
         if (alerts.length > lastAlertCount) {
             showToast('🔴 NEW ALERT DETECTED!', 'critical');
         }
@@ -332,17 +332,17 @@ function init3DMachine() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x1a2332);
 
-    
+
     camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
     camera.position.set(0, 3, 7);
     camera.lookAt(0, 0, 0);
 
-    
+
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
 
-   
+
     scene.add(new THREE.AmbientLight(0xffffff, 0.6));
     const light = new THREE.DirectionalLight(0xffffff, 0.8);
     light.position.set(5, 10, 5);
@@ -356,7 +356,7 @@ function init3DMachine() {
     pointLight2.position.set(-3, -2, 2);
     scene.add(pointLight2);
 
-  
+
     const base = new THREE.Mesh(
         new THREE.CylinderGeometry(2, 2, 0.3, 32),
         new THREE.MeshPhongMaterial({ color: 0x334155 })
@@ -375,7 +375,7 @@ function init3DMachine() {
     body.position.y = 0.5;
     scene.add(body);
 
- 
+
     const gear1 = new THREE.Mesh(
         new THREE.TorusGeometry(1, 0.2, 16, 50),
         new THREE.MeshStandardMaterial({
@@ -423,7 +423,7 @@ function init3DMachine() {
 
     console.log('✅ 3D machine created!');
 
-  
+
     function animate() {
         requestAnimationFrame(animate);
         gears.forEach(g => g.mesh.rotation.z += g.speed);

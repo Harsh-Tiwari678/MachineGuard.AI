@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - MachineGuard AI</title>
-    
+
     <!-- Fonts connection-->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
- 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!--  dusre AWESOME type font connection-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Main Css File connection-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <i class="fas fa-shield-alt"></i>
-            <span>MachineGuard AI</span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>MachineGuard AI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/about" class="active">About</a></li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/about" class="active">About</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
 
     <section class="about-hero">
@@ -42,9 +45,11 @@
             <div class="mission-content">
                 <div class="mission-text">
                     <h2>Our Mission</h2>
-                    <p>We're on a mission to eliminate unexpected machine downtime in Indian manufacturing, reducing waste, energy consumption, and carbon emissions through AI-powered predictive maintenance.</p>
-                    <p>Every minute of unplanned downtime costs manufacturers thousands of rupees and wastes precious resources. MachineGuard AI prevents these failures before they happen.</p>
-                    
+                    <p>We're on a mission to eliminate unexpected machine downtime in Indian manufacturing, reducing
+                        waste, energy consumption, and carbon emissions through AI-powered predictive maintenance.</p>
+                    <p>Every minute of unplanned downtime costs manufacturers thousands of rupees and wastes precious
+                        resources. MachineGuard AI prevents these failures before they happen.</p>
+
                     <div class="mission-stats">
                         <div class="mission-stat">
                             <i class="fas fa-leaf"></i>
@@ -67,158 +72,74 @@
         </div>
     </section>
 
- 
-<section class="section-dark contact-section">
-    <div class="container">
-        <h2>Get In Touch</h2>
-        <p class="section-subtitle">Have questions? Want to implement MachineGuard in your factory? Reach out!</p>
 
-        <div class="contact-grid">
-          
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>harshtiwari1806@gmail.com</p>
+    <section class="section-dark contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Have questions? Want to implement MachineGuard in your factory? Reach out!</p>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>harshtiwari1806@gmail.com</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+91 9690365373</p>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9690365373</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Location</h4>
-                        <p>India</p>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>India</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-item">
-                    <i class="fas fa-share-alt"></i>
-                    <div>
-                        <h4>Connect</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>    
+                        <div>
+                            <h4>Website</h4>
+                            <p><a href="https://machineguard.ai" target="_blank" rel="noopener noreferrer">machineguard.ai</a></p>
+                        </div>
+
                         <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
                             <a href="https://www.linkedin.com/in/harsh-tiwari-515467315" target="_blank"
                                 rel="noopener noreferrer"
                                 style="color: #60a5fa; font-size: 1.5rem; transition: transform 0.3s;">
                                 <i class="fab fa-linkedin"></i>
+
                             </a>
-                            <a href="https://github.com/Harsh-Tiwari678/MachineGuard.AI" target="_blank"
-                                rel="noopener noreferrer"
-                                style="color: #60a5fa; font-size: 1.5rem; transition: transform 0.3s;">
-                                <i class="fab fa-github"></i>
+                            <a href="https://x.com/Harsh_debugs01" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
                             </a>
+
+                             <a href="https://github.com/Harsh-Tiwari678/MachineGuard.AI" target="_blank"
+                                    rel="noopener noreferrer"
+                                    style="color: #60a5fa; font-size: 1.5rem; transition: transform 0.3s;">
+                                    <i class="fab fa-github"></i>
+                             </a>
                         </div>
-                    </div>
+
+
+
+
+
+                     
                 </div>
-            </div>
+    </section>
 
-            <div class="contact-form-wrapper">
-                <form class="contact-form" id="contactForm"
-                    action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST"
-                    target="hidden_iframe" onsubmit="return submitForm()">
 
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="entry.YOUR_NAME_ENTRY_ID" placeholder="Your Name" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="entry.YOUR_EMAIL_ENTRY_ID" placeholder="your@email.com"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="entry.YOUR_MESSAGE_ENTRY_ID" rows="5"
-                            placeholder="Tell us about your requirements..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="cta-btn" id="submitBtn">
-                        <span id="btnText">Send Message</span>
-                        <i class="fas fa-paper-plane" id="btnIcon"></i>
-                    </button>
-                </form>
-
-               
-                <div id="thankYouMessage" class="thank-you-message" style="display: none;">
-                    <div class="success-animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Thank You! 🎉</h3>
-                    <p>Your message has been sent successfully.</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">We'll get back to you within 24 hours!</p>
-                    <button onclick="resetForm()" class="cta-btn" style="margin-top: 1rem;">
-                        Send Another Message
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-<script>
-    let formSubmitted = false;
-
-    function submitForm() {
-        if (formSubmitted) return false;
-
-        formSubmitted = true;
-
-        const btn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnIcon = document.getElementById('btnIcon');
-
-        btn.disabled = true;
-        btnText.textContent = 'Sending...';
-        btnIcon.className = 'fas fa-spinner fa-spin';
-
-        setTimeout(() => {
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('thankYouMessage').style.display = 'block';
-
-            document.getElementById('thankYouMessage').scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-        }, 1500);
-
-        return true;
-    }
-
-    function resetForm() {
-        formSubmitted = false;
-
-        document.getElementById('contactForm').reset();
-        document.getElementById('contactForm').style.display = 'block';
-        document.getElementById('thankYouMessage').style.display = 'none';
-
-     
-        const btn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnIcon = document.getElementById('btnIcon');
-
-        btn.disabled = false;
-        btnText.textContent = 'Send Message';
-        btnIcon.className = 'fas fa-paper-plane';
-
-        document.getElementById('contactForm').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        });
-    }
-</script>
- 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -256,4 +177,5 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
+
 </html>
