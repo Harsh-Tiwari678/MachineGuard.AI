@@ -13,7 +13,6 @@ import time
 import random
 
 dotenv.load_dotenv()
-
 app = Flask(__name__)
 CORS(app)
 
@@ -33,6 +32,10 @@ MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["machineguard"]
 collection = db["predictions"]
+
+# ✅ YE LINE ADD KARO YAHAN
+start_background_thread()
+
 
 # Global flag to track if background thread is running
 background_running = False
