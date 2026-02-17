@@ -34,8 +34,10 @@ db = client["machineguard"]
 collection = db["predictions"]
 
 # ✅ YE LINE ADD KARO YAHAN
-start_background_thread()
 
+import threading
+data_thread = threading.Thread(target=background_data_generator, daemon=True)
+data_thread.start()
 
 # Global flag to track if background thread is running
 background_running = False
