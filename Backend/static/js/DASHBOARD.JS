@@ -1,6 +1,8 @@
 // isme frontend ko api se connect krke data fetch krke dashboard me show krna hai
-const API_URL = 'http://localhost:5000';
+// frontend ko live backend se connect karne ke liye
+const API_URL = 'https://machineguard-ai-2.onrender.com';
 const UPDATE_INTERVAL = 5000;
+
 
 let chart = null;
 let lastAlertCount = 0;
