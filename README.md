@@ -217,10 +217,10 @@ pip install -r requirements.txt
 ### **Step 4: Environment Variables**
 Create `.env` file:
 ```env
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/machineguard
-MAIL_SERVER=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USE_TLS=True
+MONGO_URI=mongodb+srv://username:password.net/machineguard
+MAIL_SERVER=
+MAIL_PORT=
+MAIL_USE_TLS=
 MAIL_USERNAME=your-email@gmail.com
 MAIL_PASSWORD=your-app-password
 
