@@ -1,204 +1,187 @@
 <div align="center">
 
-# 🛡️ MachineGuard AI
+# 🛡️ MachineGuard AI  
+### AI-Powered Predictive Maintenance for Sustainable Manufacturing
 
-### Sustainable Manufacturing Through Predictive Maintenance
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-3.0-green.svg)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen.svg)
+![ML](https://img.shields.io/badge/Model-RandomForest-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Maintained](https://img.shields.io/badge/Maintained-Active-success.svg)
 
-[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen.svg)](https://www.mongodb.com/)
-[![ML](https://img.shields.io/badge/ML-Scikit--learn-orange.svg)](https://scikit-learn.org/)
+**🚨 Predict Failures 6+ Hours Early | 💰 Save ₹120L+ Annually | ⚡ Reduce Downtime by 80%**
 
-
-**Predict Failures 6 Hours Early | Save ₹120L+ Annually | Reduce Downtime by 80%**
-
-[🌐 Live Demo] https://machineguard-ai-2.onrender.com/ | 
+🌐 **Live Demo:** https://machineguard-ai-2.onrender.com/  
+📂 **GitHub Repository:** https://github.com/Harsh-Tiwari678/MachineGuard.AI  
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+# 📌 Overview
 
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Solution](#solution)
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Screenshots](#screenshots)
-- [Impact & Results](#impact--results)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [Team](#team)
-- [License](#license)
+MachineGuard AI is a real-time predictive maintenance platform that prevents unexpected industrial machine failures using Machine Learning and cloud-based monitoring.
+
+The system continuously monitors five critical machine parameters:
+
+- Air Temperature  
+- Process Temperature  
+- Rotational Speed (RPM)  
+- Torque  
+- Tool Wear  
+
+Using a trained Random Forest classifier on 10,000+ industrial records, the system achieves **95% prediction accuracy** and provides **6+ hours of early failure warning**.
+
+The objective is to shift industries from reactive maintenance to proactive, AI-driven preventive maintenance.
 
 ---
 
-## 🎯 Overview
+# ❗ Problem Statement
 
-**MachineGuard AI** is a real-time predictive maintenance system that leverages machine learning to prevent unexpected industrial failures. The platform continuously monitors five critical parameters—air temperature, process temperature, rotational speed (RPM), torque, and tool wear—updating predictions every 10 seconds. 
+Manufacturing industries suffer heavy losses due to unplanned machine breakdowns:
 
-Using a Random Forest classifier trained on 10,000+ failure records, it achieves **95% prediction accuracy** and provides **6+ hours of early warning** before catastrophic breakdowns. The system reduces unexpected downtime by **80%**, saves **₹120L+ annually** per facility, and promotes sustainable manufacturing by minimizing energy waste and material loss.
+- ⛔ 48+ hours downtime per failure  
+- 💰 ₹50L+ daily production loss  
+- ⚠️ No real-time machine health tracking  
+- 🔧 Reactive maintenance instead of predictive  
+- 🌍 Energy waste and environmental damage  
 
----
-
-## ❌ Problem Statement
-
-Indian manufacturing industries lose over **₹5000 crores annually** due to unexpected machine failures, causing:
-
-- 🔴 **48+ hours** of production downtime per incident
-- 💰 **₹50L+ daily losses** per factory
-- ⚠️ **Zero real-time visibility** into machine health
-- 🔧 **Reactive maintenance** instead of proactive prevention
-- 🌍 Significant **energy waste** and environmental impact
+Traditional systems detect failures after damage occurs.  
+MachineGuard AI predicts failures before they happen.
 
 ---
 
-## ✅ Solution
+# ✅ Solution
 
-MachineGuard AI transforms industrial maintenance from **reactive to proactive** through:
+MachineGuard AI transforms industrial safety through:
 
-### **🤖 AI-Powered Predictions**
-- Real-time failure probability calculation
-- 95% prediction accuracy
-- 6+ hours early warning system
-- Risk classification (Low/Medium/High)
+## 🤖 AI Prediction Engine
+- Random Forest ML model  
+- Real-time failure probability calculation  
+- Risk classification (Low / Medium / High)  
+- 95% model accuracy  
+- 6+ hour early warning system  
 
-### **📊 Live Monitoring Dashboard**
-- Real-time sensor data visualization
-- Historical trend analysis
-- Interactive charts and graphs
-- Mobile-responsive interface
+## 📊 Live Monitoring Dashboard
+- Sensor data updates every 10 seconds  
+- Historical trend analysis  
+- Interactive visualization  
+- Mobile-responsive UI  
 
-### **🔔 Smart Alert System**
-- Instant email notifications
-- High-risk event logging
-- Automated alert generation
-- Emergency contact integration
+## 🔔 Smart Alert System
+- Email notifications for high-risk cases  
+- Alert logging  
+- Automated emergency triggers  
 
-### **💬 RAG Maintenance Assistant**
-- AI chatbot for troubleshooting
-- Maintenance protocol guidance
-- 24/7 support availability
-- Context-aware responses
-
----
-
-## 🌟 Key Features
-
-### **Core Capabilities**
-
-| Feature | Description |
-|---------|-------------|
-| ⏱️ **Real-Time Monitoring** | Data updates every 10 seconds |
-| 🎯 **95% Accuracy** | Random Forest ML model |
-| ⚡ **6+ Hour Warning** | Early failure detection |
-| 📈 **Trend Analysis** | Historical data visualization |
-| 📧 **Email Alerts** | Gmail SMTP integration |
-| 💾 **Cloud Storage** | MongoDB Atlas database |
-| 📱 **Responsive UI** | Works on all devices |
-| 🤖 **AI Assistant** | RAG-powered chatbot |
-
-### **Monitored Parameters**
-
-1. **Air Temperature** (295-305K)
-2. **Process Temperature** (300-315K)
-3. **Rotational Speed** (1200-2800 RPM)
-4. **Torque** (20-80 Nm)
-5. **Tool Wear** (0-250 minutes)
+## 💬 AI Maintenance Assistant
+- Context-aware chatbot  
+- Troubleshooting guidance  
+- Maintenance protocol suggestions  
 
 ---
 
-## 🛠️ Tech Stack
+# 🧠 Machine Learning Details
 
-### **Backend**
+- Dataset Size: 10,000+ records  
+- Algorithm: Random Forest Classifier  
+- Train/Test Split: 80/20  
+- Accuracy: 95%  
+- Metrics Evaluated:
+  - Precision  
+  - Recall  
+  - F1 Score  
+  - Confusion Matrix  
+
+Model is serialized using `joblib` and deployed via Flask REST API.
+
+---
+
+# 🛠️ Tech Stack
+
+## Backend
+- Python 3.10  
+- Flask 3.0  
+- Flask-Mail  
+- Flask-CORS  
+- pymongo  
+- gunicorn  
+
+## Machine Learning
+- scikit-learn  
+- pandas  
+- numpy  
+- joblib  
+
+## Frontend
+- HTML5 / CSS3 / JavaScript  
+- Three.js  
+- GSAP  
+- AOS Animations  
+- Particles.js  
+
+## Database & Deployment
+- MongoDB Atlas  
+- Render Hosting  
+- Git & GitHub  
+
+---
+
+# 🏗️ System Architecture
+
+User Interface  
+⬇  
+Flask REST API  
+⬇  
+ML Prediction Engine + MongoDB Atlas  
+⬇  
+Sensor Data Simulator  
+
+Predictions are updated every 10 seconds and stored in the cloud database.
+
+---
+
+# 📁 Project Structure
+
 ```
-Python 3.10
-├── Flask 3.0.0          # Web framework
-├── Flask-CORS           # Cross-origin support
-├── Flask-Mail 0.9.1     # Email notifications
-├── pymongo 4.6.1        # MongoDB driver
-├── python-dotenv        # Environment variables
-└── gunicorn             # Production server
+MachineGuard.AI/
+│
+├── Backend/
+│   ├── app.py
+│   ├── model.pkl
+│   ├── requirements.txt
+│   ├── routes/
+│   └── utils/
+│
+├── Frontend/
+│   ├── index.html
+│   ├── dashboard.html
+│   ├── static/
+│   └── assets/
+│
+├── screenshots/
+├── .env.example
+└── README.md
 ```
 
-### **Machine Learning**
-```
-scikit-learn 1.3.2       # ML algorithms
-├── Random Forest        # Classifier model
-├── pandas 2.1.4         # Data processing
-├── numpy 1.26.2         # Numerical computing
-└── joblib 1.3.2         # Model persistence
-```
+---
 
-### **Frontend**
-```
-HTML5 / CSS3 / JavaScript
-├── Three.js             # 3D animations
-├── GSAP                 # Smooth animations
-├── AOS                  # Scroll animations
-└── Particles.js         # Background effects
+# ⚙️ Installation
 
-
-### **Database & Deployment**
-```
-MongoDB Atlas            # Cloud database
-render          # Web hosting
-Git/GitHub              # Version control
-```
-
-
-
-## 🏗️ Architecture
-```
-┌─────────────────────────────────────────────────────┐
-│                  User Interface                     │
-│  (Dashboard, Charts, Alerts, Contact Form)          │
-└──────────────────┬──────────────────────────────────┘
-                   │
-                   ▼
-┌─────────────────────────────────────────────────────┐
-│              Flask REST API                         │
-│  (/latest, /history, /contact, /ask, /alerts)       │
-└──────────────────┬──────────────────────────────────┘
-                   │
-         ┌─────────┴─────────┐
-         ▼                   ▼
-┌──────────────────┐  ┌──────────────────┐
-│  ML Prediction   │  │  MongoDB Atlas   │
-│   Engine         │  │   (Time-series   │
-│ (Random Forest)  │  │    Storage)      │
-└──────────────────┘  └──────────────────┘
-         ▲                   ▲
-         │                   │
-         └─────────┬─────────┘
-                   │
-         ┌─────────▼─────────┐
-         │  Data Simulator   │
-         │ (Sensor Data Gen) │
-         └───────────────────┘
-
-
-
-
-## 📦 Installation
-
-### **Prerequisites**
+## Prerequisites
 - Python 3.10+
 - MongoDB Atlas account
-- Gmail account (for email notifications)
+- Gmail App Password
 
-### **Step 1: Clone Repository**
-bash
+## 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/Harsh-Tiwari678/MachineGuard.AI.git
 cd MachineGuard.AI/Backend
+```
 
+## 2️⃣ Create Virtual Environment
 
-### **Step 2: Create Virtual Environment**
 ```bash
 python -m venv venv
 
@@ -207,264 +190,114 @@ venv\Scripts\activate
 
 # Linux/Mac
 source venv/bin/activate
+```
 
+## 3️⃣ Install Dependencies
 
-### **Step 3: Install Dependencies**
 ```bash
 pip install -r requirements.txt
+```
 
+## 4️⃣ Setup Environment Variables
 
-### **Step 4: Environment Variables**
 Create `.env` file:
-```env
-MONGO_URI=mongodb+srv://username:password.net/machineguard
+
+```
+MONGO_URI=
 MAIL_SERVER=
 MAIL_PORT=
 MAIL_USE_TLS=
-MAIL_USERNAME=your-email@gmail.com
-MAIL_PASSWORD=your-app-password
+MAIL_USERNAME=
+MAIL_PASSWORD=
+```
 
+## 5️⃣ Run Application
 
-**⚠️ Gmail App Password Setup:**
-1. Enable 2-Step Verification
-2. Generate App Password: https://myaccount.google.com/apppasswords
-3. Use 16-digit password (no spaces)
-
-### **Step 5: Run Application**
 ```bash
 python app.py
+```
 
-
-Access at: `http://localhost:5000`
-
-
-
-## 🚀 Usage
-
-### **1. Home Page**
-Navigate to home page to see project overview and features.
-
-### **2. Dashboard**
-Access real-time monitoring at `/dashboard`:
-- View current machine status
-- Check failure probability
-- See risk level classification
-- Analyze historical trends
-
-### **3. Maintenance Assistant**
-Use AI chatbot for guidance:
-- Ask about high-risk scenarios
-- Get troubleshooting help
-- Learn maintenance protocols
-
-### **4. Contact Form**
-Submit queries via contact form:
-- Automatically sends email
-- Professional HTML templates
-- Instant confirmation
-
-
-
-## 📡 API Documentation
-
-### **GET /latest**
-Get latest prediction
-json
-{
-  "Air temperature [K]": 302.5,
-  "Process temperature [K]": 312.3,
-  "Rotational speed [rpm]": 1856,
-  "Torque [Nm]": 45.2,
-  "Tool wear [min]": 125,
-  "prediction": "Machine Healthy",
-  "failure_probability": 0.123,
-  "risk_level": "LOW RISK",
-  "timestamp": "2026-02-16T12:30:00Z"
-}
-
-
-### **GET /history**
-Get last 20 predictions
-json
-[
-  {
-    "prediction": "Machine Healthy",
-    "failure_probability": 0.15,
-    "risk_level": "LOW RISK",
-    ...
-  }
-]
-
-
-### **POST /contact**
-Send contact form message
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "message": "Query about implementation"
-}
-
-
-### **POST /ask**
-Ask maintenance assistant
-```json
-{
-  "question": "What to do in high risk situation?"
-}
-
-### **GET /alerts-log**
-Get high-risk alerts
-```json
-{
-  "alerts": [
-    "2026-02-16 12:00:00 | ALERT | Risk: 85.5% | Temp: 318.5K"
-]
-Results
-
-### **Quantifiable Metrics**
-
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| **Downtime** | 100% | 20% | 🟢 **80% Reduction** |
-| **Annual Savings** | ₹0 | ₹120L+ | 🟢 **₹120L+ Saved** |
-| **Prediction Accuracy** | N/A | 95% | 🟢 **95% Accurate** |
-| **Early Warning** | 0 hours | 6+ hours | 🟢 **6+ Hour Lead** |
-| **Maintenance** | Reactive | Proactive | 🟢 **Prevention-First** |
-
-### **Business Impact**
-- ✅ **80% reduction** in unexpected downtime
-- ✅ **₹120L+ annual savings** per manufacturing facility
-- ✅ **6+ hours early warning** for preventive action
-- ✅ **95% prediction accuracy** for reliable alerts
-- ✅ **Zero unexpected failures** with proactive monitoring
-
-### **Environmental Impact**
-- 🌱 **Reduced energy waste** from emergency shutdowns
-- 🌱 **Lower carbon footprint** through optimized operations
-- 🌱 **Minimized material loss** from damaged parts
-- 🌱 **Sustainable manufacturing** practices enabled
+Access at:  
+http://localhost:5000
 
 ---
 
-## 🔮 Future Enhancements
+# 📡 API Endpoints
 
-### **Phase 1: Hardware Integration**
-- [ ] IoT sensor hardware integration
-- [ ] Arduino/Raspberry Pi support
-- [ ] MQTT protocol implementation
-- [ ] Edge computing capabilities
+### GET /latest  
+Returns latest prediction.
 
-### **Phase 2: Mobile Applications**
-- [ ] iOS app development
-- [ ] Android app development
-- [ ] Push notifications
-- [ ] Offline mode support
+### GET /history  
+Returns last 20 predictions.
 
-### **Phase 3: Advanced Analytics**
-- [ ] Multi-machine monitoring
-- [ ] Comparative analysis dashboard
-- [ ] Predictive maintenance scheduling
-- [ ] Root cause analysis AI
+### POST /contact  
+Handles contact form messages.
 
-### **Phase 4: Enterprise Features**
-- [ ] ERP system integration
-- [ ] Role-based access control
-- [ ] Custom alert rules
-- [ ] Advanced reporting tools
+### POST /ask  
+Handles AI assistant queries.
 
-### **Phase 5: ML Improvements**
-- [ ] Deep learning models
-- [ ] Transfer learning
-- [ ] Anomaly detection algorithms
-- [ ] Self-learning capabilities
+### GET /alerts-log  
+Returns high-risk alert history.
 
 ---
 
-## 🤝 Contributing
+# 📊 Impact & Results
 
-We welcome contributions! Please follow these steps:
+| Metric | Result |
+|--------|--------|
+| Downtime Reduction | 80% |
+| Annual Savings | ₹120L+ |
+| Prediction Accuracy | 95% |
+| Early Warning | 6+ Hours |
+| Maintenance Type | Proactive |
 
-1. **Fork the repository**
-2. **Create feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit changes** (`git commit -m 'Add AmazingFeature'`)
-4. **Push to branch** (`git push origin feature/AmazingFeature`)
-5. **Open Pull Request**
-
-### **Contribution Guidelines**
-- Follow PEP 8 style guide
-- Add unit tests for new features
-- Update documentation
-- Create detailed PR descriptions
+*Impact metrics based on simulated industrial case study analysis.*
 
 ---
 
-## 👥 Team
+# 🌍 Environmental Impact
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/Harsh-Tiwari678.png" width="100px;" alt="Harsh Tiwari"/>
-      <br />
-      <sub><b>Harsh Tiwari</b></sub>
-      <br />
-      <a href="https://github.com/Harsh-Tiwari678">💻</a>
-      <a href="https://www.linkedin.com/in/harsh-tiwari-515467315">💼</a>
-      <a href="https://x.com/Harsh_debugs01">🐦</a>
-    </td>
-    <td align="center">
-      <img src="https://github.com/goldigond44.png" width="100px;" alt="Goldi Gond"/>
-      <br />
-      <sub><b>Goldi Gond</b></sub>
-      <br />
-      <a href="https://github.com/goldigond44">💻</a>
-      <a href="#">💼</a>
-      <a href="#">🐦</a>
-    </td>
-  </tr>
-</table>
+- Reduced energy waste  
+- Lower carbon footprint  
+- Minimized material damage  
+- Enables sustainable manufacturing  
 
-**Contact:**
-- 📧 Email: harshtiwari1806@gmail.com
-- 📧 Email: goldigond44@gmail.com
-- 📞 Phone: +91 9690365373
-- 📞 Phone: +91 8948220796
+---
 
+# 🔮 Future Enhancements
 
+- IoT hardware integration (Arduino / Raspberry Pi)  
+- MQTT protocol implementation  
+- Mobile applications (Android / iOS)  
+- Multi-machine monitoring  
+- Deep learning model integration  
+- Enterprise ERP integration  
 
+---
 
-## 🏆 Acknowledgments
+# 🤝 Contributing
 
-- **Hack For Green Bharat 2025** for the opportunity
-- **scikit-learn** for ML framework
-- **MongoDB Atlas** for cloud database
-- **render** for hosting
-- **Open-source community** for inspiration
+1. Fork the repository  
+2. Create a feature branch  
+3. Commit changes  
+4. Push to branch  
+5. Open Pull Request  
 
+Follow PEP 8 coding standards and update documentation accordingly.
 
+---
 
-## 🌐 Links
+# 👥 Team
 
-- **Live Demo:** https://machineguard-ai-2.onrender.com/
-- **GitHub:** https://github.com/Harsh-Tiwari678/MachineGuard.AI
+Harsh Tiwari – Backend & Deployment  
+Goldi Gond – AI/ML Development & Research  
 
-
-
-## 📞 Support
-
-For support and queries:
-- 📧 **Email:** harshtiwari1806@gmail.com
-- 📱 **Phone:** +91 9690365373
-- 💬 **Issues:** [GitHub Issues](https://github.com/Harsh-Tiwari678/MachineGuard.AI/issues)
-
-
+---
 
 <div align="center">
 
-### ⭐ Star this repository if you find it helpful!
+⭐ If you find this project valuable, please consider starring the repository.  
 
-**Made with ❤️ by Team MachineGuard**
-
-**Hack For Green Bharat 2025**
+Built for innovation, safety, and sustainable manufacturing.
 
 </div>
